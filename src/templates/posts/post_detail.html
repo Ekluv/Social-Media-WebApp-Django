@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block content %}
+{{ object.title }}
+{{ object.submitted_by }}
+
+<br>
+{% get_comment_count for object as comment_count %}
+<p>{{ comment_count }} comments have been posted.</p>
+
+
+
+{% get_comment_form for object as form %}
+<table>
+  <form action="{% comment_form_target %}" method="post">
+    {% csrf_token %}
+    {{ form.comment }}
+    {{ form.object_pk }}
+    {{ form.timestamp }}
+    {{ form.content_type }}
+    {{ form.security_hash }}
+
+
+    <tr>
+      <td colspan="2">
+          <input type="hidden" name="name" value="{{user}}">
+          <input type="hidden" name="url" value="">
+        <input type="submit" name="submit" value="Post">
+      </td>
+    </tr>
+  </form>
+</table>
+
+{% render_comment_list for object %}
+
+{% endblock %}

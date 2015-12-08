@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<table class="table table-bordered table-hover">
+{% for object in object_list %}
+<tr>
+
+    <td>
+        <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+
+
+        {% get_comment_count for object as comment_count %}
+{{ comment_count }} comment{{ comment_count|pluralize }}
+    </td>
+</tr>
+
+
+{% get_comment_list for object as comment_list %}
+{% for comment in comment_list %}
+
+{% if comment.user == user %}
+
+{#<p>You comment <strong>{{ comment.comment }}</strong> on Post <a href="{{ object.get_absolute_url }}"><strong>{{ object.title}}</strong>#}
+{#</a> of {{ object.submitted_by }}</p>#}
+
+    <p>You comment <strong>{{ comment.comment }}</strong> on Post <a href="{{ object.get_absolute_url }}"><strong>{{ comment.content_object}}</strong>
+</a> of {{ object.submitted_by }}</p>
+
+{% endif %}
+{% endfor %}
+
+
+
+
+{% endfor %}
+
+    {% else %}
+    <h1>Login Required</h1>
+
+{% endif %}
+
+</table>
+{% endblock %}
