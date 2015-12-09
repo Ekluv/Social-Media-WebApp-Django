@@ -2,9 +2,10 @@
 {% load comments %}
 
 {% block content %}
-{{ object.title }}
-{{ object.submitted_by }}
-
+<div class="jumbotron">
+    <h3>Post :</h3> <h2>{{ object.title }}</h2>
+Submitted by: <strong>{{ object.submitted_by }}</strong>
+</div>
 <br>
 {% get_comment_count for object as comment_count %}
 <p>{{ comment_count }} comments have been posted.</p>

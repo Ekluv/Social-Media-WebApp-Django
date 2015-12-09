@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^$',PostListView.as_view() , name='post_list'),
      url(r'^comments/', include('django_comments.urls')),
     url(r'^(?P<pk>\d+)/$', PostDetailView.as_view() ,name="post_detail"),
+    url(r'^addpost$','posts.views.addpost' , name='addpost'),
+
     #url(r'^(?P<pk>\d+)/inventory/$',VariationListView.as_view() , name='product_inventory'),
 
 

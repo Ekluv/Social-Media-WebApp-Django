@@ -13,7 +13,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^posts/', include('posts.urls')),
+    url(r'^posts/', include('posts.urls'),name="all_posts"),
 ]
 
 if settings.DEBUG:
