@@ -1,0 +1,5 @@
+Django==1.8.4
+django-crispy-forms==1.5.2
+django-registration-redux==1.2
+wheel==0.24.0
+django-contrib-comments
