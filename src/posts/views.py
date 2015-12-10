@@ -51,28 +51,3 @@ def addpost(request):
     return render(request, "posts/addpost.html", context)
 
 
-
-
-
-    # if request.user.is_authenticated():
-    #
-    # 	queryset = SignUp.objects.all().order_by('-timestamp') #.filter(full_name__iexact="Justin")
-    # 	context = {
-    # 		"queryset": queryset
-    # 	}
-
-
-    # class PostFormView(FormView):
-    #     template_name = 'posts/addpost.html'
-    #     form_class = PostForm
-    #     success_url = '/thanks/'
-    #
-    #     # def save_model(self, request, obj, form, change):
-    #     #     if not change:
-    #     #         obj.submitted_by = request.user
-    #     #     obj.save()
-    #
-    #
-    #     def form_valid(self, form):
-    #         print form
-    #         return super(PostFormView, self).form_valid(form)

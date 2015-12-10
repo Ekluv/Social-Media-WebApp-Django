@@ -16,16 +16,16 @@
           <ul class="nav navbar-nav">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
 
           </ul>
+        {% if user.is_authenticated %}
 <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'post_list' %}">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search User Posts" name="q">
         </div>
 
       </form>
-
+        {% endif %}
 
           <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}

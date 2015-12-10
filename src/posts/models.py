@@ -4,13 +4,10 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=1000, blank=False,null=False)
-    submitted_by = models.ForeignKey(User,related_name="posts")
+    title = models.TextField(max_length=1000, blank=False,null=False)
+    submitted_by = models.ForeignKey(User)
     submitted_on = models.DateTimeField(auto_now_add=True,auto_now=False)
-    likes = models.PositiveIntegerField(default=0)
-    dislikes = models.PositiveIntegerField(default=0)
-    class Meta:
-        verbose_name_plural = 'posts'
+
     def __unicode__(self):
         return self.title
 

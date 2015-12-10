@@ -4,16 +4,16 @@
 {% block content %}
 <div class="row">
 
-  <div class="col-sm-3 pull-right">
-
+  <div class="col-lg-offset-3 col-sm-6">
+    <div class="well">
 			<p class='lead text-align-center'>{{ msg }}</p>
 
 			<form method='POST' action=''>{% csrf_token %}
 			{{ form|crispy }}
 
-			<button class='btn btn-primary' type='submit'>{{ button_value }}</button>
+			<button class='btn btn-primary btn-block' type='submit'>{{ button_value }}</button>
 
 			</form>
 	</div>
-
+</div>
   {% endblock %}

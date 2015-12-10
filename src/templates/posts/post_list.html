@@ -3,6 +3,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+    <h3>Posts</h3>
 <table class="table table-bordered table-hover">
 {% for object in object_list %}
 <tr>

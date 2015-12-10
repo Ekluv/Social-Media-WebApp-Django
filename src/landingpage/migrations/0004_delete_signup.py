@@ -7,15 +7,11 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('newsletter', '0002_post'),
+        ('landingpage', '0003_auto_20151206_2255'),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='post',
-            name='submitted_by',
-        ),
         migrations.DeleteModel(
-            name='Post',
+            name='SignUp',
         ),
     ]
