@@ -7,9 +7,18 @@ class Post(models.Model):
     title = models.TextField(max_length=1000, blank=False,null=False)
     submitted_by = models.ForeignKey(User)
     submitted_on = models.DateTimeField(auto_now_add=True,auto_now=False)
-
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse("post_detail",kwargs={"pk":self.pk})
+
+
+
+class Like(models.Model):
+    voter = models.ForeignKey(User)
+    post = models.ForeignKey(Post)
+
+
+    def __unicode__(self):
+        return "%s voted %s" % (self.voter.username,self.post.title)

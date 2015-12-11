@@ -8,9 +8,16 @@
 {% for object in object_list %}
 <tr>
 
-    <td>
-        <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+    <td><h4>Title:<a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h4>
+<form method="post" action="{%url 'like' %}">
+    <li>{% csrf_token %}
+ <input type="hidden" name="posts" value="{{object.pk}}">
+<input type="hidden" name="user" value="{{user.pk}}">
 
+<button class="btn btn-primary btn-xs">Like</button></li>
+<strong>Likes{{ object.like_set.all.count }}</strong>
+
+</form>
 
         {% get_comment_count for object as comment_count %}
 {{ comment_count }} comment{{ comment_count|pluralize }}
