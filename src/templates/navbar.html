@@ -1,7 +1,7 @@
    {% load staticfiles %}
 
    <!-- Static navbar -->
-    <nav class="navbar navbar-inverse navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,7 +29,8 @@
 
           <ul class="nav navbar-nav navbar-right">
           {% if request.user.is_authenticated %}
-            <li><a href="{% url 'post_list' %}">See all Posts</a></li>
+            <li><a href="{% url 'add_post' %}">Add Post</a></li>
+              <li><a href="{% url 'post_list' %}">See all Posts</a></li>
             <li><a href="{% url 'auth_logout' %}">Logout</a></li>
             {% else %}
             <li><a href="{% url 'registration_register' %}">Register</a></li>

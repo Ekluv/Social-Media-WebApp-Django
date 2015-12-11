@@ -7,13 +7,8 @@
 
 <style>
 {% block style %}
-.navbar-static-top {
-	margin-bottom: 0px !important;
-}
-
 .jumbotron {
-	background-color:#0E3D14;
-	color: #FFF;
+margin-top: -20px;
 }
 
 {% endblock %}
@@ -38,19 +33,6 @@
 {% block content %}
  {% if request.user.is_authenticated %}
 <h1>You are logged in!</h1>
-{##}
-{#	{% if queryset %}#}
-{#	<h2>Welcome Staff</h2>#}
-{#	<table class='table'>#}
-{#	{% for instance in queryset %}#}
-{#		<tr><td>{{ forloop.counter }}</td><td>{{ instance.email }}</td><td>{{ instance.full_name }}</td><td>{{ instance.timestamp|timesince }} ago</td></tr>#}
-{#		{% if instance.email == "abc@gmail.edu" %}#}
-{#		<tr><td>is equal</td></tr>#}
-{#		{% endif %}#}
-{#	{% endfor %}#}
-{#	</table>#}
-{##}
-{#	{% endif %}#}
 
      <a href="{% url 'post_list' %}" class="btn btn-success btn-block"> View Posts </a>
      <a href="{% url 'add_post' %}" class="btn btn-info btn-block"> Add Posts </a>
