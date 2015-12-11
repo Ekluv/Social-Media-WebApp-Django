@@ -13,6 +13,7 @@ Instructions
 
 
 Third party modules used:
-1 django-crispy-forms
-2 django-registration-redux
-3 django-contrib-comments
+
+1. django-crispy-forms
+2. django-registration-redux
+3. django-contrib-comments
