@@ -1,0 +1,4 @@
+django-crispy-forms
+django-registration-redux
+django-contrib-comments
+Bootstrap 3
