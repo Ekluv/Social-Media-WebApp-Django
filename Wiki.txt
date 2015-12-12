@@ -1,0 +1,17 @@
+Table/Models used:
+	1. Post:
+		Fields
+			* Title: String
+			* Submitted By: Foreign key to User Table/Model
+			* Submitted On: DateField
+
+	2. Like:
+		Fields
+			* Voter: Foreign key to User Model
+			* Post: Foreign key to Post Model
+
+	3. Comment:
+		Fields:
+			* Comment: String 
+			* User: Foreign key to User Model
+			* Model_Linked: Foreign key to Post Model				
